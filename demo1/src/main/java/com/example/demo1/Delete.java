@@ -7,9 +7,6 @@ import javafx.collections.ObservableList;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class Delete {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
@@ -18,7 +15,7 @@ public class Delete {
         observableList.addListener(new ListChangeListener<String>() {
             @Override
             public void onChanged(Change<? extends String> c) {
-                System.out.println("List cnaged");
+                System.out.println("List was changed");
             }
         });
 

@@ -2,22 +2,21 @@ package com.example.demo1;
 
 import javafx.scene.control.TextField;
 
-public class lesson8 extends TextField {
-    String numberRexEx = "[0-9]*";
+public class NumberTextField extends TextField {
+    String numberRegEx = "[0-9]*";
 
     @Override
     public void replaceText(int start, int end, String text){
         String oldValue = getText();
-        if ((validate(text))){
+        if ((validate(text))) {
             super.replaceText(start, end, text);
             String newText = super.getText();
-            if (!validate(newText)){
+            if (!validate(newText)) {
                 super.setText(oldValue);
             }
         }
     }
-
-    private boolean validate(String text){
-        return ("".equals(text) || text.matches(numberRexEx));
+    private boolean validate(String text) {
+        return ("".equals(text) || text.matches(numberRegEx));
     }
 }
